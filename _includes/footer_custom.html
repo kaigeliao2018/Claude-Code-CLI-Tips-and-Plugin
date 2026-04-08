@@ -1,0 +1,26 @@
+<div id="lang-toggle" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:99999;display:flex;border-radius:6px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.25);">
+  <button onclick="setLang('en')" id="btn-en" style="padding:0.5rem 1.1rem;border:1px solid #bbb;border-right:none;cursor:pointer;background:#fff;color:#444;font-size:0.85rem;font-weight:600;font-family:inherit;">EN</button>
+  <button onclick="setLang('both')" id="btn-both" style="padding:0.5rem 1.1rem;border:1px solid #7253ed;border-right:none;cursor:pointer;background:#7253ed;color:#fff;font-size:0.85rem;font-weight:600;font-family:inherit;">双语</button>
+  <button onclick="setLang('zh')" id="btn-zh" style="padding:0.5rem 1.1rem;border:1px solid #bbb;cursor:pointer;background:#fff;color:#444;font-size:0.85rem;font-weight:600;font-family:inherit;">中文</button>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.classList.remove('show-en', 'show-zh');
+  if (lang === 'en' || lang === 'zh') {
+    document.body.classList.add('show-' + lang);
+  }
+  localStorage.setItem('preferred-lang', lang);
+  var colors = { en: ['#7253ed','#fff'], both: ['#7253ed','#fff'], zh: ['#7253ed','#fff'] };
+  ['en', 'both', 'zh'].forEach(function(l) {
+    var btn = document.getElementById('btn-' + l);
+    if (!btn) return;
+    var active = l === lang;
+    btn.style.background = active ? '#7253ed' : '#fff';
+    btn.style.color = active ? '#fff' : '#444';
+    btn.style.borderColor = active ? '#7253ed' : '#bbb';
+  });
+}
+var saved = localStorage.getItem('preferred-lang') || 'both';
+setLang(saved);
+</script>
