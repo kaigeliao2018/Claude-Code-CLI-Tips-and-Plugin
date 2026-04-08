@@ -1,0 +1,79 @@
+<style>
+  /* Language toggle button group */
+  .lang-toggle {
+    position: fixed;
+    top: 0.85rem;
+    right: 1.2rem;
+    z-index: 9999;
+    display: flex;
+    gap: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  .lang-btn {
+    padding: 0.28rem 0.75rem;
+    border: 1px solid #d5d5d5;
+    border-right: none;
+    cursor: pointer;
+    background: #fff;
+    color: #555;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .lang-btn:last-child { border-right: 1px solid #d5d5d5; }
+  .lang-btn:hover { background: #f0f0f0; }
+  .lang-btn.active {
+    background: #7253ed;
+    color: #fff;
+    border-color: #7253ed;
+  }
+  /* Show/hide language blocks */
+  body.show-en .lang-zh { display: none !important; }
+  body.show-zh .lang-en { display: none !important; }
+  /* Style for language blocks */
+  .lang-en, .lang-zh { margin: 0; }
+</style>
+
+<script>
+(function() {
+  function setLang(lang) {
+    var body = document.body;
+    body.classList.remove('show-en', 'show-zh');
+    if (lang === 'en' || lang === 'zh') {
+      body.classList.add('show-' + lang);
+    }
+    localStorage.setItem('preferred-lang', lang);
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  }
+
+  function init() {
+    // Insert toggle buttons
+    var toggle = document.createElement('div');
+    toggle.className = 'lang-toggle';
+    toggle.innerHTML =
+      '<button class="lang-btn" data-lang="en">EN</button>' +
+      '<button class="lang-btn" data-lang="both">双语</button>' +
+      '<button class="lang-btn" data-lang="zh">中文</button>';
+    document.body.appendChild(toggle);
+
+    toggle.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { setLang(btn.dataset.lang); });
+    });
+
+    // Restore saved preference
+    var saved = localStorage.getItem('preferred-lang') || 'both';
+    setLang(saved);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
