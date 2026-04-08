@@ -1,3 +1,9 @@
+---
+title: Basic Usage / 基础用法
+parent: Tips & Tricks / 技巧
+nav_order: 1
+---
+
 # Basic Usage / 基础用法
 
 ## Starting Claude Code / 启动 Claude Code

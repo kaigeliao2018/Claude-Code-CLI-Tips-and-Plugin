@@ -1,3 +1,9 @@
+---
+title: Hooks Configuration / Hooks 配置
+parent: Tips & Tricks / 技巧
+nav_order: 3
+---
+
 # Hooks Configuration / Hooks 配置
 
 Hooks allow you to run shell commands automatically in response to Claude Code events — without Claude's involvement.

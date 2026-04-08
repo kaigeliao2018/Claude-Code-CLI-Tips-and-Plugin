@@ -1,0 +1,26 @@
+title: Claude Code CLI — Tips & Plugins
+description: A community-curated collection of tips, tricks, workflows, and plugins for Claude Code CLI / Claude Code CLI 使用心得、技巧与插件收录
+baseurl: "/Claude-Code-CLI-Tips-and-Plugin"
+url: "https://kaigeliao2018.github.io"
+
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+
+# Navigation
+nav_sort: case_sensitive
+
+# Footer
+footer_content: "MIT License &copy; 2026 kaigeliao2018"
+
+# Color scheme: light / dark
+color_scheme: light
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag

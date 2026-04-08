@@ -1,3 +1,9 @@
+---
+title: Plugins / 插件
+nav_order: 3
+has_children: true
+---
+
 # Plugin Collection / 插件收录
 
 A curated list of plugins, extensions, and tools that enhance Claude Code.

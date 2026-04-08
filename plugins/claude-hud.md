@@ -1,3 +1,9 @@
+---
+title: claude-hud 安装指南
+parent: Plugins / 插件
+nav_order: 1
+---
+
 # Claude Code CLI - Claude-HUD 插件安装指南
 
 ## 📋 概述

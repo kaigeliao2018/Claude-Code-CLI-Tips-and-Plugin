@@ -1,3 +1,9 @@
+---
+title: Advanced Techniques / 进阶技巧
+parent: Tips & Tricks / 技巧
+nav_order: 2
+---
+
 # Advanced Techniques / 进阶技巧
 
 ## Custom Slash Commands / 自定义斜杠命令
