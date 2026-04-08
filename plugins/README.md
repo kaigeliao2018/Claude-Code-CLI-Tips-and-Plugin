@@ -12,6 +12,18 @@ A curated list of plugins, extensions, and tools that enhance Claude Code.
 
 [模型上下文协议（MCP）](https://modelcontextprotocol.io) 允许 Claude Code 连接外部工具和数据源。
 
+---
+
+## Plugins / 插件
+
+| Name / 名称 | Description / 描述 | Guide / 安装指南 |
+|---|---|---|
+| **[claude-hud](./claude-hud.md)** | Real-time status bar (context, tools, agents, git) / 实时状态栏（上下文、工具、Agent、Git） | [安装指南](./claude-hud.md) |
+
+---
+
+## MCP Servers / MCP 服务器
+
 ### How to add an MCP server / 如何添加 MCP 服务器
 
 ```bash
